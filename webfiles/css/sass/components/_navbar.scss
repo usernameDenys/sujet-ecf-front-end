@@ -10,7 +10,7 @@ nav {
 
   a {
     font-family: $titleFont;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     text-decoration: none;
     display: flex;
     width: fit-content;
@@ -29,14 +29,21 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 1rem;
+    background-color: $secondary;
+    padding: 0.625rem;
+
+    &.active {
+      left: 0;
+      overflow-y: auto;
+    }
 
     .nav-link {
       transition: 0.7s ease;
     }
 
     .nav-link:hover {
-      color: dodgerblue;
+      color: $secondary;
     }
   }
 
@@ -46,12 +53,20 @@ nav {
 
     .bar {
       display: block;
-      width: 25px;
-      height: 3px;
+      width: 50px;
+      height: 5px;
       margin: 5px auto;
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
-      background-color: #fff;
+      background-color: $secondary;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  nav {
+    a > span {
+      display: none;
     }
   }
 }
@@ -68,11 +83,11 @@ nav {
           }
 
           &:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
+            transform: translateY(10px) rotate(45deg);
           }
 
           &:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
+            transform: translateY(-10px) rotate(-45deg);
           }
         }
       }
@@ -80,11 +95,11 @@ nav {
 
     .nav-menu {
       position: fixed;
-      left: -100%;
+      left: -150%;
       top: 90px;
       gap: 0;
       flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.25);
+      background-color: rgba(0, 0, 0, 0.5);
       width: 100%;
       text-align: center;
       transition: 0.3s;
