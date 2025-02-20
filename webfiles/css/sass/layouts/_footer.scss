@@ -112,6 +112,21 @@ footer {
         height: 30px;
       }
     }
+
+    .invalid {
+      background: #ffcccc;
+
+      &:focus {
+        outline-color: red;
+      }
+    }
+
+    .valid {
+      background: #ccffcc;
+      &:focus {
+        outline-color: green;
+      }
+    }
   }
 
   #location {
