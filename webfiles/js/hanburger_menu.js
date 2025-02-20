@@ -10,7 +10,16 @@ hamburgerMenu.addEventListener("click", () => {
 });
 
 links.forEach((element) =>
-  element.addEventListener("click", () => {
+  element.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const targetId = element.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
     hamburgerMenu.classList.remove("active");
     navMenu.classList.remove("active");
   })
